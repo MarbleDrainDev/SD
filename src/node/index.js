@@ -130,7 +130,7 @@ class Node {
           node.status = 'failed';
           this.log(`Node ${id} failed heartbeat check`);
           this.nodes.delete(id);
-          this.broadcastNodes();
+          this.broadcastNodes(); // Asegúrate de emitir el estado actualizado
           if (this.nodes.size === 0) {
             this.startElection();
           }
